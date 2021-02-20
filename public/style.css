@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+::-webkit-scrollbar {
+  background-color: #1a1a1a;
+  width: 0.3em;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #00cbcb;
+  border-radius: 2em;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #2a2a2a;
+}
+nav {
+  position: sticky;
+  width: 10%;
+  max-width: 70px;
+  height: 100%;
+  background-color: #1a1a1a;
+  box-shadow: 0.4em 0px 0.4em #00000044;
+}
+ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+li {
+  margin: 1em auto;
+}
+.top,
+.bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+footer {
+  color: #00cbcb;
+  background-color: #3a3a3a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2em;
+  box-shadow: 0.4em 0px 0.4em #00000044;
+}
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.signin {
+  color: #ffffff;
+  width: 75%;
+  max-width: 750px;
+  background-color: #1a1a1a;
+  border-radius: 2em;
+  padding: 2em 2.5rem;
+  box-shadow: 0.4em 0px 0.4em #00000044;
+}
+.signin-types {
+  background-color: #3a3a3a;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 0.75em;
+  border-top-left-radius: 0.75em;
+}
+.signin-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.log-in {
+  border-top-right-radius: 0.75em;
+  padding: 1.1em;
+}
+.sign-up {
+  border-top-left-radius: 0.75em;
+  padding: 1.1em;
+}
+.active {
+  background-color: #00cbcb;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  padding: 0.5em 0;
+}
+form button {
+  margin-top: 1.1em;
+  padding: 1.1em;
+  border-bottom-left-radius: 0.75em;
+  border-bottom-right-radius: 0.75em;
+  border: 0;
+  background-color: #00cbcb;
+  color: #ffffff;
+}
+.msg {
+  margin-top: 1rem;
+  font-size: 0.5em;
+  display: none;
+  justify-content: center;
+}

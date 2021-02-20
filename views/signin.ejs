@@ -1,0 +1,80 @@
+<%- include("partials/header") %> 
+<div class="signin">
+    <div class="signin-types">
+        <div class="signin-type sign-up active"><h3>Sign Up</h3></div>
+        <div class="signin-type log-in"><h3>Log In</h3></div>
+    </div>
+        <form>
+            <div class="msg"></div>
+            <label for="email">Email Id</label>
+            <input type="email" name="email" required autocomplete="off">
+            <label for="pass">Password</label>
+            <input type="password" name="pass" required minlength=6>
+            <button>Submit</button>
+        </form>
+</div>
+<%- include("partials/footer") %>
+<script>
+    const signUp = document.querySelector(".sign-up");
+    const logIn = document.querySelector(".log-in");
+    const form = document.querySelector("form");
+    const msg = document.querySelector(".msg");
+
+    // switching sign-in mode
+    signUp.addEventListener("click",()=>{
+        logIn.classList.remove("active");
+        signUp.classList.add("active");
+    })
+    logIn.addEventListener("click",()=>{
+        signUp.classList.remove("active");
+        logIn.classList.add("active");
+    })
+
+    // sending data to thte server
+    form.addEventListener("submit",async (e)=>{
+        e.preventDefault();
+        const mail = form.email.value;
+        const pass = form.pass.value;
+        const mode = signUp.classList.contains("active")?"signup":"login"
+        // console.log(mail,pass,mode);
+        if(mode === "signup"){
+            try{
+            const res = await fetch("/signin/signup",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({mail,pass})
+            })
+            // console.log(res);
+            const data = await res.json()
+            console.log(data);
+            if(!data.error){
+                msg.style.display = "flex";
+                msg.style.backgroundColor  = "#00ff00";
+                msg.textContent = "SUCCESS";
+                // location.assign("/mic");
+            }else{
+                msg.style.display = "flex";
+                msg.style.backgroundColor = "#ff0000";
+                msg.textContent = data.error;
+            }
+            }
+            catch(err) {
+            console.log(err);
+            }
+        }
+        else{
+            try{
+                const res = fetch("/signin/login",{
+                    method:"POST",
+                    header:{"Content-Type":"application/json"},
+                    body:JSON.stringify({mail,pass})
+                })
+            }catch(err){
+
+            }
+        }
+    })
+</script>
+</html>

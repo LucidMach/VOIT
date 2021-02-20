@@ -1,0 +1,4 @@
+node_modules/
+pass.json
+.prettierignore
+.env
