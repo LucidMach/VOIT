@@ -24,30 +24,26 @@
     signUp.addEventListener("click",()=>{
         logIn.classList.remove("active");
         signUp.classList.add("active");
+        msg.style.display = "none";
     })
     logIn.addEventListener("click",()=>{
         signUp.classList.remove("active");
         logIn.classList.add("active");
+        msg.style.display = "none";
     })
 
-    // sending data to thte server
-    form.addEventListener("submit",async (e)=>{
-        e.preventDefault();
-        const mail = form.email.value;
-        const pass = form.pass.value;
-        const mode = signUp.classList.contains("active")?"signup":"login"
-        // console.log(mail,pass,mode);
-        if(mode === "signup"){
-            try{
-            const res = await fetch("/signin/signup",{
+    // sending a signup request
+    const sendSignUp = async (mail,pass) => {
+        try{
+            const resS = await fetch("/signin/signup",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
                 },
                 body:JSON.stringify({mail,pass})
             })
-            // console.log(res);
-            const data = await res.json()
+            // console.log(resS);  
+            const data = await resS.json()
             console.log(data);
             if(!data.error){
                 msg.style.display = "flex";
@@ -63,17 +59,44 @@
             catch(err) {
             console.log(err);
             }
-        }
-        else{
-            try{
-                const res = fetch("/signin/login",{
-                    method:"POST",
-                    header:{"Content-Type":"application/json"},
-                    body:JSON.stringify({mail,pass})
-                })
-            }catch(err){
-
+    }
+    // sending a login request to the server
+    const sendLogIn = async (mail,pass) => {
+        try {
+            const resL = await fetch("/signin/login",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({mail,pass})
+            })
+            // console.log(resL);
+            const data = await resL.json();
+            console.log(data);
+            msg.textContent = data.user;
+            if(data.user === "SUCCESS"){
+                msg.style.display = "flex";
+                msg.style.backgroundColor  = "#00ff00";
+                location.assign("/mic");
+            } else {
+                msg.style.display = "flex";
+                msg.style.backgroundColor = "#ff0000";
             }
+        } catch (err) {
+            console.log(err)
+        }
+    } 
+    // sending data to thte server
+    form.addEventListener("submit",async (e)=>{
+        e.preventDefault();
+        const mail = form.email.value;
+        const pass = form.pass.value;
+        const mode = signUp.classList.contains("active")?"signup":"login"
+        // console.log(mail,pass,mode);
+        if(mode === "signup"){
+            sendSignUp(mail,pass);
+        } else if(mode === "login"){
+            sendLogIn(mail,pass);
         }
     })
 </script>

@@ -1,11 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
 // dev dependencies
 const morgan = require("morgan");
 
 // imports
 const signinRoute = require("./routes/signinRoute");
+const micRoute = require("./routes/micRoute");
 
 // initializations
 dotenv.config();
@@ -14,6 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(express.static("public"));
+app.use(cookieParser());
 // view engine
 app.set("view engine", "ejs");
 
@@ -36,3 +39,4 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 app.use("/signin", signinRoute);
+app.use("/mic", micRoute);
