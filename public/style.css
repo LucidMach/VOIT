@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 ::-webkit-scrollbar {
   background-color: #1a1a1a;
@@ -50,7 +50,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.2em;
+  padding: 2.5em;
   box-shadow: 0.4em 0px 0.4em #00000044;
 }
 .content {
@@ -114,4 +114,26 @@ form button {
   font-size: 0.5em;
   display: none;
   justify-content: center;
+}
+.mic {
+  padding: 2.5em;
+  border-radius: 100%;
+  border: 2px solid #00cbcb;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 0.8em 0.8em #00000044;
+}
+.mic:focus {
+  outline: none;
+}
+.mic:active {
+  box-shadow: 0em 0em 0.6em 0.6em #00000044;
+}
+.preview {
+  display: none;
+  transform: translateY(2em);
+  background-color: #3a3a3a;
+  color: #00cbcb;
+  text-transform: capitalize;
+  padding: 1em;
+  border-radius: 25px;
 }
