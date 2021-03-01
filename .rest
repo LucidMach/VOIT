@@ -1,0 +1,4 @@
+POST http://127.0.0.1:3000/command?command=slower
+###
+
+GET http://127.0.0.1:3000/command

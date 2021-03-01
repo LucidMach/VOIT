@@ -8,6 +8,7 @@ const morgan = require("morgan");
 // imports
 const signinRoute = require("./routes/signinRoute");
 const micRoute = require("./routes/micRoute");
+const commandRoute = require("./routes/commandRoute");
 
 // initializations
 dotenv.config();
@@ -34,9 +35,12 @@ mongoose
   })
   .catch((err) => console.log(err));
 
+// app.listen(process.env.PORT || 3000);
+
 // routes
 app.get("/", (req, res) => {
   res.render("home");
 });
 app.use("/signin", signinRoute);
 app.use("/mic", micRoute);
+app.use("/command", commandRoute);
