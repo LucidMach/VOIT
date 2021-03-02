@@ -5,8 +5,8 @@ const keywords = {
   created: "I was created by Suraj",
   built: "Team 6 built me",
 
-  lights: "turning on LED",
-  off: "turning off LED",
+  up: "turning on LED",
+  down: "turning off LED",
 
   faster: "increasing blink speed",
   slower: "decreasing blink speed",

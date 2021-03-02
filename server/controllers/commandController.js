@@ -9,5 +9,5 @@ module.exports.postCommand = (req, res) => {
 };
 
 module.exports.getCommand = (req, res) => {
-  res.send(commandState);
+  res.status(201).send(commandState);
 };

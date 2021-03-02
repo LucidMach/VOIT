@@ -1,4 +1,4 @@
-node_modules/
-pass.json
-.prettierignore
-.env
+server/node_modules/
+server/pass.json
+server/.env
+.vscode
