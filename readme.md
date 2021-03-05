@@ -23,7 +23,7 @@ VOIT has 3 major components
 
 </br>
 
-`Authentication`
+### Authentication
 
 For VOIT, Authentication playes a major role in ensure that an registed user is actually controling the internet thing.
 For a secure We could use either
@@ -51,7 +51,7 @@ There are 2 main reason for storing JWTs in cookies
 
 </br>
 
-`Command Extraction`
+### Command Extraction
 
 Obvios, we can use AI-ML/DL/RL to parse meaning out of sentences, but that utilises more computation.
 So for VOIT we would utilising regEx to find predefined keywords in an sentence.
@@ -60,7 +60,7 @@ regEx finds given patterns in a string, when it finds a match, it check's the ob
 
 </br>
 
-`IoT`
+### IoT
 
 VOIT runs on an nodejs server. It has 2 types of clients:
 
