@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 // dev dependencies
 const morgan = require("morgan");
+const ip = require("ip");
 
 // imports
 const signinRoute = require("./routes/signinRoute");
@@ -30,8 +31,8 @@ mongoose
     useCreateIndex: true,
   })
   .then((result) => {
-    app.listen(process.env.PORT || 3000);
-    console.log(process.env.PORT || 3000);
+    app.listen(process.env.PORT || 3000, "0.0.0.0");
+    console.log(`${ip.address()}:${process.env.PORT || 3000}`);
   })
   .catch((err) => console.log(err));
 

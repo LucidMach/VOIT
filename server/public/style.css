@@ -137,3 +137,12 @@ form button {
   padding: 1em;
   border-radius: 25px;
 }
+.commands {
+  display: none;
+  margin-top: 2rem;
+  transform: translateY(2em);
+  background-color: #3a3a3a;
+  color: #00cbcb;
+  padding: 1em;
+  border-radius: 25px;
+}

@@ -13,6 +13,7 @@
     "mongoose": "^5.11.17"
   },
   "devDependencies": {
+    "ip": "^1.1.5",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.7"
   },

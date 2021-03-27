@@ -1,18 +1,20 @@
 const mic = document.querySelector(".mic");
 const pre = document.querySelector(".preview");
+const commands = document.querySelector(".commands");
 
 const keywords = {
-  created: "I was created by Suraj",
-  built: "Team 6 built me",
+  hello: "Hello Master Wayne\n",
+  name: "My name is voit\n",
 
-  up: "turning on LED",
-  down: "turning off LED",
+  on: "powering up the bi ped\n",
+  down: "shutting down the bi ped\n",
 
-  faster: "increasing blink speed",
-  slower: "decreasing blink speed",
+  walk: "initiating walk cycle\n",
+  run: "initiating walk cycle\n",
+  crawl: "initiating walk cycle\n",
 
-  hello: "Hello, I'm voit",
-  you: "I am voit",
+  faster: "increasing speed\n",
+  slower: "decreasing speed\n",
 };
 
 const keys = Object.keys(keywords);
@@ -26,42 +28,47 @@ try {
     console.log("Ears Activated");
   };
 
+  // outputting what it hears
   ears.onresult = function (e) {
     const current = e.resultIndex;
     const transcript = e.results[current][0].transcript;
     pre.style.display = "flex";
     pre.textContent = transcript;
-    outLoud(transcript);
+    const op = handleCommands(transcript);
+    outLoud(op);
   };
 
   mic.addEventListener("click", () => {
     ears.start();
   });
 } catch (err) {
-  pre.textContent = "Your Browser Doesn't Support Speech Recognition";
-}
-try {
-  function outLoud(msg) {
-    msg = handleCommands(msg);
-    const mouth = new SpeechSynthesisUtterance();
-    mouth.rate = 1;
-    mouth.pitch = 1;
-    mouth.volume = 1;
-    mouth.text = msg;
-    window.speechSynthesis.speak(mouth);
-  }
-} catch (err) {
   pre.textContent = "Your Browser Doesn't Support Speech Synthesis";
 }
-function handleCommands(command) {
-  console.log(command);
+
+function outLoud(msg) {
+  const mouth = new SpeechSynthesisUtterance();
+  mouth.rate = 1;
+  mouth.pitch = 1;
+  mouth.volume = 1;
+  mouth.text = msg;
+  window.speechSynthesis.speak(mouth);
+}
+
+function handleCommands(input) {
+  let output = [];
+  let inout = [];
+  // console.log(input);
   keys.forEach((key) => {
-    if (command.includes(key)) {
+    if (input.includes(key)) {
       transferCommands(key);
-      command = keywords[key];
+      inout.push(keywords[key]);
+      output.push(key);
     }
   });
-  return command;
+  commands.style.display = "flex";
+  commands.textContent = output.join(" ");
+  // console.log(output);
+  return inout;
 }
 
 const transferCommands = async (command) => {
