@@ -18,7 +18,7 @@
     "nodemon": "^2.0.7"
   },
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "nodemon server/server.js"
+    "start": "set NODE_ENV=pro && node server/server.js",
+    "dev": "set NODE_ENV=dev && nodemon server/server.js"
   }
 }

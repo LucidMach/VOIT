@@ -1,11 +1,17 @@
+// env var
+const isDev = process.env.NODE_ENV === "dev" ? true : false;
+const port = process.env.PORT || 5000;
+
+// depencencies
 const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 // dev dependencies
-// const morgan = require("morgan");
-
+if (isDev) {
+  const morgan = require("morgan");
+}
 // imports
 const signinRoute = require("./routes/signinRoute");
 const micRoute = require("./routes/micRoute");
@@ -16,7 +22,7 @@ dotenv.config();
 const app = express();
 // middleware
 app.use(express.json());
-// app.use(morgan("dev"));
+if (isDev) app.use(morgan("dev"));
 app.use(express.static(path.join("server", "public")));
 app.use(cookieParser());
 // view engine
@@ -32,12 +38,10 @@ mongoose
     useCreateIndex: true,
   })
   .then((result) => {
-    app.listen(process.env.PORT || 3000);
-    console.log(process.env.PORT || 3000);
+    app.listen(port);
+    console.log(port);
   })
   .catch((err) => console.log(err));
-
-// app.listen(process.env.PORT || 3000);
 
 // routes
 app.get("/", (req, res) => {
