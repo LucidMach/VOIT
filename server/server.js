@@ -1,4 +1,5 @@
 // env var
+console.log(process.env.NODE_ENV);
 const isDev = process.env.NODE_ENV === "dev" ? true : false;
 const port = process.env.PORT || 5000;
 
