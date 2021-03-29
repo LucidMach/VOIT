@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 // dev dependencies
-const morgan = require("morgan");
+// const morgan = require("morgan");
 
 // imports
 const signinRoute = require("./routes/signinRoute");
@@ -16,7 +16,7 @@ dotenv.config();
 const app = express();
 // middleware
 app.use(express.json());
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 app.use(express.static(path.join("server", "public")));
 app.use(cookieParser());
 // view engine
