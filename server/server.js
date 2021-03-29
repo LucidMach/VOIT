@@ -2,9 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 // dev dependencies
 const morgan = require("morgan");
-const ip = require("ip");
 
 // imports
 const signinRoute = require("./routes/signinRoute");
@@ -17,10 +17,11 @@ const app = express();
 // middleware
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(express.static("public"));
+app.use(express.static(path.join("server", "public")));
 app.use(cookieParser());
 // view engine
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // database
 const mUrl = process.env.mDB;
