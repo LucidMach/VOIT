@@ -5,6 +5,7 @@ const commands = document.querySelector(".commands");
 const keywords = {
   hello: "Hello Master Wayne\n",
   name: "My name is voit\n",
+  who: "I am voit\n",
 
   on: "powering up the bi ped\n",
   down: "shutting down the bi ped\n",

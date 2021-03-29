@@ -31,8 +31,8 @@ mongoose
     useCreateIndex: true,
   })
   .then((result) => {
-    app.listen(process.env.PORT || 3000, "0.0.0.0");
-    console.log(`${ip.address()}:${process.env.PORT || 3000}`);
+    app.listen(process.env.PORT || 5000);
+    console.log(process.env.PORT || 5000);
   })
   .catch((err) => console.log(err));
 
