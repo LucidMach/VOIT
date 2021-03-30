@@ -5,17 +5,20 @@ const commands = document.querySelector(".commands");
 const keywords = {
   hello: "Hello Master Wayne\n",
   name: "My name is voit\n",
-  who: "I am voit\n",
+  do: "I am an Interface to a bi ped,  I update the server's command",
+  built: "Team 7 i,e Besil, Suraj, Swaroop and Arun built me",
+  made:
+    "The Interface part of me was built in html,css,javascript and The Bot in C++",
 
   on: "powering up the bi ped\n",
   down: "shutting down the bi ped\n",
 
-  walk: "initiating walk cycle\n",
-  run: "initiating walk cycle\n",
-  crawl: "initiating walk cycle\n",
+  walk: "initiating bot walk cycle\n",
+  run: "initiating bot run cycle\n",
+  crawl: "initiating  bot crawl cycle\n",
 
-  faster: "increasing speed\n",
-  slower: "decreasing speed\n",
+  faster: "increasing movement speed\n",
+  slower: "decreasing movement speed\n",
 };
 
 const keys = Object.keys(keywords);
