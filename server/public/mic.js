@@ -64,7 +64,7 @@ function handleCommands(input) {
   // console.log(input);
   keys.forEach((key) => {
     if (input.includes(key)) {
-      setTimeout(() => transferCommands(key),500);
+      setTimeout(() => transferCommands(key),2000);
       inout.push(keywords[key]);
       output.push(key);
     }
