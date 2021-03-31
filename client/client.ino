@@ -2,7 +2,7 @@
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
-#define ssid "Nukalas"
+#define ssid "Nukalas_2GEXT"
 #define pass "885623277"
 
 #define led 2
@@ -34,7 +34,7 @@ void loop()
   {
     delay(1000);
     HTTPClient http;
-    http.begin(serverName.c_str());
+    http.begin(serverName.c_str(),"94 FC F6 23 6C 37 D5 E7 92 78 3C 0B 5F AD 0C E4 9E fD 9E A8");
     int httpResponseCode = http.GET();
 
     if (httpResponseCode > 0)
@@ -43,7 +43,7 @@ void loop()
       Serial.println(httpResponseCode);
       String payload = http.getString();
       Serial.println(payload);
-      if (payload == "up")
+      if (payload == "on")
       {
         digitalWrite(led, LOW);
       }
@@ -61,7 +61,7 @@ void loop()
         }
         u = 500;
       }
-      else if (payload == "slower")
+      else if (payload == "slow")
       {
         while (u < 1000)
         {

@@ -5,7 +5,7 @@ const commands = document.querySelector(".commands");
 const keywords = {
   hello: "Hello Master Wayne\n",
   name: "My name is voit\n",
-  do: "I am an Interface to a bi ped, I can help you talk to the bi ped\n",
+  you: "I am an Interface to a bi ped, I can help you talk to the bi ped\n",
   built: "Team 7 that is Besil, Suraj, Swaroop, Arun built me\n",
   made:
     "The Interface part of me was built in html,css,java script and The robot in C++\n",
