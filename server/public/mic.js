@@ -62,27 +62,27 @@ function handleCommands(input) {
   let output = [];
   let inout = [];
   // console.log(input);
-  keys.forEach((key) => {
+  keys.forEach((key,i) => {
     if (input.includes(key)) {
-      setTimeout(() => transferCommands(key),2000);
+      setTimeout(() => transferCommands(key),1000 * i);
       inout.push(keywords[key]);
       output.push(key);
     }
   });
   commands.style.display = "flex";
   commands.textContent = output.join(" ");
-  // console.log(output);
   return inout;
+  // console.log(output);
 }
 
 const transferCommands = async (command) => {
-  const res = await fetch("../command", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ command: command }),
-  });
-  const data = await res.json();
-  console.log(data);
+    const res = await fetch("../command", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ command: command }),
+    });
+    const data = await res.json();
+    console.log(data);
 };
