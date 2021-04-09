@@ -1,3 +1,5 @@
+[deployed website](http://voit-beta.herokuapp.com/)
+
 # VOIT
 
 VOIT or Voice Operated Internet Thing is Tech (nothing else perfectly describes what) that lets you control any bot/thing (as in Internet of Things) through a voice based web interface.
@@ -25,8 +27,8 @@ VOIT has 3 major components
 
 ### Authentication
 
-For VOIT, Authentication playes a major role in ensure that an registed user is actually controling the internet thing.
-For a secure We could use either
+For VOIT, Authentication playes a major role in ensuring that a registed user is actually controlling the internet thing.
+For Authentication, We could use either
 
 1. Voice Recognition
 2. JWT Authentication
@@ -34,7 +36,7 @@ For a secure We could use either
 For now we're using JWT
 JWT is a token based system, The server assigns to a user a token when he/she signs-in.
 To access a restriced page, The user must send a request with the token in it's headers.
-The server verifies the token (sees if the token is untampered) and gived the user access to the page.
+The server verifies the token (sees if the token is untampered) and gives the user access to the page.
 
 #### Storing Passwords
 
@@ -46,7 +48,7 @@ This object is then jsonified and then uploaded to the database(mongoDB Atlas)
 The most effective way to store tokens is in cookies,
 There are 2 main reason for storing JWTs in cookies
 
-1. token's can be set to http only, implying that it can be accessed by javascript code, this makes it XSS(cross-site scripting) attack proof
+1. token's can be set to http only, implying that it can't be accessed by javascript code, this makes it XSS(cross-site scripting) attack proof
 2. JWT are stored in JSON making them very compact
 
 </br>
@@ -64,17 +66,17 @@ regEx finds given patterns in a string, when it finds a match, it check's the ob
 
 VOIT runs on an nodejs server. It has 2 types of clients:
 
-1. Interface Client(browser)
+1. Web Client(browser)
 2. Thing Client(ESP8266)
 
 Server Routes for Interface Clients:
 
 1. GET "/" : renders the home page
 2. GET "/signin" : renders the sign-in page with option for login/signup
-3. POST "/login" : sends the login data to the server and expects a JSON file that's tells the status of login
+3. POST "/login" : sends the login data to the server and returns a JSON file that's tells the status of login
 4. POST "/signup" : sends the signup data to the server where it hashes it before sending it to the database(mongoDB atlas)
 5. GET "/mic" : renders the mic page
-6. POST "/command" : sends the command extracted from text extracted from speech to the server
+6. POST "/command" : sends the commands extracted from text extracted from speech to the server
 
 Server Routes for Thing Clients:
 
