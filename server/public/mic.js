@@ -76,11 +76,11 @@ function handleCommands(input) {
 }
 
 const transferCommands = async (command) => {
-  if (command === "on") command = 1;
-  if (command === "off") command = 0;
-  if (command === "crawl") command = 2;
-  if (command === "walk") command = 3;
-  if (command === "run") command = 4;
+  if (command === "on") command = "1";
+  if (command === "off") command = "0";
+  if (command === "crawl") command = "2";
+  if (command === "walk") command = "3";
+  if (command === "run") command = "4";
 
   const res = await fetch("../command", {
     method: "POST",
