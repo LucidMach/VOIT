@@ -62,9 +62,9 @@ function handleCommands(input) {
   let output = [];
   let inout = [];
   // console.log(input);
-  keys.forEach((key,i) => {
+  keys.forEach((key, i) => {
     if (input.includes(key)) {
-      setTimeout(() => transferCommands(key),1000 * i);
+      setTimeout(() => transferCommands(key), 1000 * i);
       inout.push(keywords[key]);
       output.push(key);
     }
@@ -76,13 +76,19 @@ function handleCommands(input) {
 }
 
 const transferCommands = async (command) => {
-    const res = await fetch("../command", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ command: command }),
-    });
-    const data = await res.json();
-    console.log(data);
+  if (command === "on") command = 1;
+  if (command === "off") command = 0;
+  if (command === "crawl") command = 2;
+  if (command === "walk") command = 3;
+  if (command === "run") command = 4;
+
+  const res = await fetch("../command", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ command: command }),
+  });
+  const data = await res.json();
+  console.log(data);
 };
