@@ -1,8 +1,8 @@
-[deployed website](http://voit-beta.herokuapp.com/)
+[VOIT](https://voit-beta.herokuapp.com/)
 
 # VOIT
 
-VOIT or Voice Operated Internet Thing is Tech (nothing else perfectly describes what) that lets you control any bot/thing (as in Internet of Things) through a voice based web interface.
+VOIT or Voice Operated Internet Thing is an UI that lets you control any bot/thing (as in Internet of Things) through a voice based web interface.
 
 ## Why VOIT
 
