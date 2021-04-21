@@ -46,7 +46,7 @@ mongoose
 
 // routes
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("mic");
 });
 app.use("/signin", signinRoute);
 app.use("/mic", micRoute);
