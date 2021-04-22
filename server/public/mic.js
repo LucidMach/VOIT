@@ -14,7 +14,7 @@ const keywords = {
   down: "shutting down the bi ped\n",
 
   walk: "initiating bot walk cycle\n",
-  run: "initiating bot run cycle\n",
+  sprint: "initiating bot run cycle\n",
   crawl: "initiating  bot crawl cycle\n",
 
   faster: "increasing movement speed\n",
@@ -80,7 +80,7 @@ const transferCommands = async (command) => {
   if (command === "down") command = "0";
   if (command === "crawl") command = "2";
   if (command === "walk") command = "3";
-  if (command === "run") command = "4";
+  if (command === "sprint") command = "4";
 
   const res = await fetch("../command", {
     method: "POST",
