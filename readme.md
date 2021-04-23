@@ -1,4 +1,4 @@
-[VOIT](https://voit-beta.herokuapp.com/)
+[VOIT](https://voit.herokuapp.com/)
 
 # VOIT
 
