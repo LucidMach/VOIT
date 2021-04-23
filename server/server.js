@@ -5,7 +5,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-const morgan = require("morgan");
+// const morgan = require("morgan");
 // imports
 const micRoute = require("./routes/micRoute");
 const commandRoute = require("./routes/commandRoute");
