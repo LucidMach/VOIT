@@ -1,9 +1,9 @@
 const express = require("express");
-const reqAuth = require("../middleware/authMW");
+// const reqAuth = require("../middleware/authMW");
 
 const applet = express.Router();
 
-applet.get("/", reqAuth.jwtAuth, (req, res) => {
+applet.get("/", (req, res) => {
   res.render("mic");
 });
 
