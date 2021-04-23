@@ -8,7 +8,7 @@
 #define led 2
 int u = 500;
 
-String serverName = "https://voit-beta.herokuapp.com/command";
+String serverName = "https://voit.herokuapp.com/command";
 
 void setup()
 {
@@ -34,7 +34,7 @@ void loop()
   {
     delay(1000);
     HTTPClient http;
-    http.begin(serverName.c_str(),"94 FC F6 23 6C 37 D5 E7 92 78 3C 0B 5F AD 0C E4 9E fD 9E A8");
+    http.begin(serverName.c_str(), "94 FC F6 23 6C 37 D5 E7 92 78 3C 0B 5F AD 0C E4 9E fD 9E A8");
     int httpResponseCode = http.GET();
 
     if (httpResponseCode > 0)
