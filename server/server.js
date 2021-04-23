@@ -16,7 +16,7 @@ const app = express();
 
 // middleware
 app.use(express.json());
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 app.use(express.static(path.join("server", "public")));
 app.use(cookieParser());
 // view engine
