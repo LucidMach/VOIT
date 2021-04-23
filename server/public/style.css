@@ -103,55 +103,7 @@ footer {
   padding: 2.5em;
   box-shadow: 0.4em 0px 0.4em #00000044;
 }
-.signin {
-  color: #ffffff;
-  width: 75%;
-  max-width: 750px;
-  background-color: #1a1a1a;
-  border-radius: 2em;
-  padding: 2em 2.5rem;
-  box-shadow: 0.4em 0px 0.4em #00000044;
-}
-.signin-types {
-  background-color: #3a3a3a;
-  display: flex;
-  align-items: center;
-  border-top-right-radius: 0.75em;
-  border-top-left-radius: 0.75em;
-}
-.signin-type {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1;
-}
-.log-in {
-  border-top-right-radius: 0.75em;
-  padding: 1.1em;
-}
-.sign-up {
-  border-top-left-radius: 0.75em;
-  padding: 1.1em;
-}
-.active {
-  background-color: #00cbcb;
-}
-form {
-  display: flex;
-  flex-direction: column;
-}
-label {
-  padding: 0.5em 0;
-}
-form button {
-  margin-top: 1.1em;
-  padding: 1.1em;
-  border-bottom-left-radius: 0.75em;
-  border-bottom-right-radius: 0.75em;
-  border: 0;
-  background-color: #00cbcb;
-  color: #ffffff;
-}
+
 .msg {
   margin-top: 1rem;
   font-size: 0.5em;

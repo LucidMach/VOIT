@@ -1,6 +1,3 @@
-// env var
-console.log(process.env.NODE_ENV);
-const isDev = process.env.NODE_ENV === "dev" ? true : false;
 const port = process.env.PORT || 5000;
 
 // depencencies
@@ -8,10 +5,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-// dev dependencies
-if (isDev) {
-  const morgan = require("morgan");
-}
+const morgan = require("morgan");
 // imports
 const micRoute = require("./routes/micRoute");
 const commandRoute = require("./routes/commandRoute");
@@ -22,7 +16,7 @@ const app = express();
 
 // middleware
 app.use(express.json());
-if (isDev) app.use(morgan("dev"));
+app.use(morgan("dev"));
 app.use(express.static(path.join("server", "public")));
 app.use(cookieParser());
 // view engine
