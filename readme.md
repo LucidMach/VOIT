@@ -1,4 +1,5 @@
-[VOIT](https://voit-beta.herokuapp.com/)
+[VOIT Devolopment URL](https://voit-beta.herokuapp.com/)
+[VOIT Production URL](https://voit.herokuapp.com/)
 
 # VOIT
 
