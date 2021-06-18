@@ -32,9 +32,10 @@ void loop()
 {
   if (WiFi.status() == WL_CONNECTED)
   {
-    delay(1000);
+    delay(10);
     HTTPClient http;
-    http.begin(serverName.c_str(),"94 FC F6 23 6C 37 D5 E7 92 78 3C 0B 5F AD 0C E4 9E fD 9E A8");
+    // Update SSL FingerPrint Regulaly
+    http.begin(serverName.c_str(),"C3 75 80 CA 88 E2 40 62 94 8F E9 E9 BD 18 81 B8 33 39 AA 33");
     int httpResponseCode = http.GET();
 
     if (httpResponseCode > 0)
@@ -43,11 +44,11 @@ void loop()
       Serial.println(httpResponseCode);
       String payload = http.getString();
       Serial.println(payload);
-      if (payload == "on")
+      if (payload == "1")
       {
         digitalWrite(led, LOW);
       }
-      else if (payload == "down")
+      else if (payload == "0")
       {
         digitalWrite(led, HIGH);
       }
